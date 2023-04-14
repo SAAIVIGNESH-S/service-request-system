@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQh5/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="css/request.css" />
+  <link rel="stylesheet" href="css/card.css" />
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxs-pyramid"></i>
+      <span class="logo_name">RQ 24/7</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">
+          <form action="/view-request-admin" method="post">
+            <input type="hidden" value="<%=email%>" name="email" />
+            <input type="hidden" value="all" name="dropVal" />
+            <button style="
+                  width: 300px;
+                  background-color: white;
+                  color: #77619e;
+                  outline: none;
+                  border: none;
+                " value="pending" class="link_name">
+              <i class="bx bx-envelope"></i>All Requests &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+          </form>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">All Requests</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class="bx bx-collection"></i>
+            <span class="link_name">Filter by</span>
+          </a>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Filter By</a></li>
+          <li>
+            <form action="/view-request-admin" method="post">
+              <input type="hidden" value="<%=email%>" name="email" />
+              <input type="hidden" value="approved" name="dropVal" />
+              <button style="
+                    background-color: white;
+                    color: #77619e;
+                    outline: none;
+                    border: none;
+                    margin-bottom: 15px;
+                  " value="approved">
+                Approved Requests
+              </button>
+            </form>
+          </li>
+          <li>
+            <form action="/view-request-admin" method="post">
+              <input type="hidden" value="<%=email%>" name="email" />
+              <input type="hidden" value="rejected" name="dropVal" />
+              <button style="
+                    background-color: white;
+                    color: #77619e;
+                    outline: none;
+                    border: none;
+                    margin-bottom: 15px;
+                  " value="rejected">
+                Rejected Requests
+              </button>
+            </form>
+          </li>
+          <li>
+            <form action="/view-request-admin" method="post">
+              <input type="hidden" value="<%=email%>" name="email" />
+              <input type="hidden" value="pending" name="dropVal" />
+              <button style="
+                    background-color: white;
+                    color: #77619e;
+                    outline: none;
+                    border: none;
+                  " value="pending">
+                Pending Requests
+              </button>
+            </form>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <form action="/add-user" method="post">
+            <input type="hidden" value="<%=email%>" name="email" />
+            <!-- <input type="hidden" value="all" name="dropVal" /> -->
+            <button style="
+                  width: 300px;
+                  background-color: white;
+                  color: #77619e;
+                  outline: none;
+                  border: none;
+                " value="pending" class="link_name">
+              <i class="bx bx-add-to-queue"></i>Add
+              Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+          </form>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Add Students</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="/">
+          <i class="bx bx-log-out"></i>
+          <span class="link_name">Logout</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/">Logout</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img
+              src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2021/12/Best-Quality-Profile-Images-Pic-Download-2023.jpg"
+              alt="profileImg" />
+          </div>
+          <div style="padding: 30px 0; margin-right: auto" class="name-job">
+            <div class="profile_name">Admin</div>
+            <div style="font-size: 15px" class="profile_name">
+              <%=email%>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <section class="home-section">
+    <div class="home-content">
+      <i class="bx bx-menu"></i>
+      <span class="text">Add Users</span>
+    </div>
+
+    <div class="join-div">
+      <div style="margin-left: 150px;margin-top:35px;" class="container">
+        <form class="well form-horizontal" action="/register-user" method="post" id="addUserForm">
+          <fieldset>
+
+            <div class="form-group">
+              <input type="hidden" value="<%=email%>" name="adminMail">
+              <label class="col-md-4 control-label">Name : </label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
+                  <input name="name" placeholder="Name" class="form-control" type="text" id="name" /> 
+                  
+                </div>
+              </div>
+              <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Email address : </label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
+                  <input name="email" placeholder="Mail Address" class="form-control" type="email" id="email" /> 
+                </div>
+              </div>
+              <span class="error" id="emailError"></span>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Roll number : </label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
+                  <input name="rollNo" placeholder="Unique id" class="form-control" type="text" id="rollNo" /> 
+                </div>
+              </div>
+              <span class="error" id="rollNoError"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Role</label>
+              <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select name="role" class="form-control selectpicker">
+                    <option value="admin">Admin</option>
+                    <option value="student">Student</option>
+                  </select>
+                  <!-- To pass to ejs.. -->
+                  <!-- <input type="hidden" value="priority"> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Text area -->
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Department</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <input class="form-control" name="dept" placeholder="Department" id="dept"></input>
+                </div>
+              </div>
+              <span class="error" id="deptError"></span>
+            </div>
+
+
+            <!-- submit -->
+            <button class="btn btn-light" style="margin-left: 10%;margin-top: 30px;font-size: 20px;" type="submit"
+              name="button">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+
+      <div>
+        <img style="height: 100vh;width: 750px;margin-left: -600px;margin-top: -150px; object-fit: contain;"
+          src="images/newRequest.png" alt="">
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="js/NavBar.js" charset="utf-8"></script>
+  <script src="js/addUser.js" charset="utf-8"></script>
+</body>
+
+</html>

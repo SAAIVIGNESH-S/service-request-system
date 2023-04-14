@@ -1,0 +1,105 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.avatar-left {
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+.avatar-right {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  padding-top: 20px;
+}
+
+.card {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.content-right {
+  margin-left: auto;
+}
+
+.subject {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.description {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.bottom-content {
+  margin: 20px;
+}
+
+#back {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 50px;
+  background-color: #77619e;
+  border: #77619e;
+}
+
+#approve {
+  background-color: green;
+  border: green;
+}
+
+#reject {
+  background-color: red;
+  border: red;
+}
+
+.actions {
+  margin: 50px;
+}
+
+.error {
+  color: #df2e38;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}

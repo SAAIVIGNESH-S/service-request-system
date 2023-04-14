@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQh5/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="css/request.css" />
+  <link rel="stylesheet" href="css/particular.css" />
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxs-pyramid"></i>
+      <span class="logo_name">RQ 24/7</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">
+          <form action="/view-request-admin" method="post">
+            <input type="hidden" value="<%=email%>" name="email" />
+            <input type="hidden" value="all" name="dropVal" />
+            <button style="
+                  width: 300px;
+                  background-color: white;
+                  color: #77619e;
+                  outline: none;
+                  border: none;
+                " value="pending" class="link_name">
+              <i class="bx bx-envelope"></i>All Requests &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+          </form>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">All Requests</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class="bx bx-collection"></i>
+            <span class="link_name">Filter by</span>
+          </a>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Filter By</a></li>
+          <li>
+            <form action="/view-request-admin" method="post">
+              <input type="hidden" value="<%=email%>" name="email" />
+              <input type="hidden" value="approved" name="dropVal" />
+              <button style="
+                    background-color: white;
+                    color: #77619e;
+                    outline: none;
+                    border: none;
+                    margin-bottom: 15px;
+                  " value="approved">
+                Approved Requests
+              </button>
+            </form>
+          </li>
+          <li>
+            <form action="/view-request-admin" method="post">
+              <input type="hidden" value="<%=email%>" name="email" />
+              <input type="hidden" value="rejected" name="dropVal" />
+              <button style="
+                    background-color: white;
+                    color: #77619e;
+                    outline: none;
+                    border: none;
+                    margin-bottom: 15px;
+                  " value="rejected">
+                Rejected Requests
+              </button>
+            </form>
+          </li>
+          <li>
+            <form action="/view-request-admin" method="post">
+              <input type="hidden" value="<%=email%>" name="email" />
+              <input type="hidden" value="pending" name="dropVal" />
+              <button style="
+                    background-color: white;
+                    color: #77619e;
+                    outline: none;
+                    border: none;
+                  " value="pending">
+                Pending Requests
+              </button>
+            </form>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <form action="/add-user" method="post">
+            <input type="hidden" value="<%=email%>" name="email" />
+            <input type="hidden" value="all" name="dropVal" />
+            <button style="
+                  width: 300px;
+                  background-color: white;
+                  color: #77619e;
+                  outline: none;
+                  border: none;
+                " value="pending" class="link_name">
+              <i class="bx bx-add-to-queue"></i>Add
+              Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+          </form>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Add Students</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="/">
+          <i class="bx bx-log-out"></i>
+          <span class="link_name">Logout</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/">Logout</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img
+              src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2021/12/Best-Quality-Profile-Images-Pic-Download-2023.jpg"
+              alt="profileImg" />
+          </div>
+          <div style="padding: 30px 0; margin-right: auto" class="name-job">
+            <div class="profile_name">Admin</div>
+            <div style="font-size: 15px" class="profile_name">
+              <%=email%>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <section class="home-section">
+    <% data.forEach((item,idx)=> { %>
+      <div class="home-content">
+        <i class="bx bx-menu"></i>
+        <span class="text">Admin Dashboard</span>
+        <button type="button" class="btn btn-primary btn-lg" id="back" onclick="window.history.back()">
+          Back
+        </button>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="list-item">
+            <div class="avatar-left">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX/AAD/////oKD/o6P/q6v/tLT/9/f/v7//y8v/2dn//Pz/5+f/7+//+fn/x8f/rKz/QkL/lJT/aGj/4eH/PT3/Fxf/JSX/LCz/SEj/09P/UlL/cXH/4uL/3Nz/dXX/amr/i4v/WFj/YmL/Njb/Dg5YVaM7AAADZUlEQVR4nO3d6VLqQBSF0e5Ahs7EGENUlMH3f8bbAQGZrnew69Q+7C//rLLYqxhSRgVj75VXfUlfWRTF0jmX+ep0V3xsNNw3OC/62y6+f3hsdLqt/W37FZ1fs/Sryn5evzPP7znMja9Vy+j9ed42Hwamj6d2vJl0yR8J3Vsrvfefe3px3wrrZ+mV/9ki/a3wFd3Xt1jeFw6lx/1Q0T3hm/SyH+v9prDS8Ag9tEiuheVCetWPNi4vhZUuoCcmF0JND9F9i3OhnheZU9OvQi2nifOik3AmvSVQ7ijU9yTcNz4Ia+klwYo/hVrvwv2d6IVOekfAup1Q45ni0LQXJrg/8H5fU3phJ70iaJkXTqRHBG3lhVPpEUFbe+FYekTQ2tzkml9o/EtNZapGekTYvFB6QuASCuFL/KE7CvEr1QsLb9TdqzfqzlEInzOar9L0ZRTClxndl2mMqb1RdymF8KX+0F1MIXwU4hf7Q3cj9cIhhfBRiN/Qv9bobmB0/knbKQrxoxA/CvGjEL9HEA6kJwQuohA+CvGjEL/IH7qjED8K8aMQPwrxoxA/CvGjED8K8aMQPwrxoxA/CvGjED8K8aMQPwrxoxA/CvGjED8K8aMQPwrxoxA/CvGjED8K8aMQPwrxoxA/CvGjED8K8aMQPwrxoxA/CvGjED8K8aMQv0d4fxoK0aMQPwrxi9S/96V+4SO8fymF6FGIH4X4PYJQ/2eU6P+cGQrRoxA//cLRA3z+IYXoUYhf/ACf6UwheqnppCcErjZOekLgMgrhy0whPSFwjkL4nCmlJwRuZhLpCYEr1AtL9cLkAYSV9ITAUYifFzbSG8JWmbyV3hC0pjJ2LD0iaG1u7EZ6RNDW1tiJ9IigrbxQ94Wa2guTJ+kVAWtKL7Qv0jMCtrG9UPOVmmwntAvpHcGa271Q7y9n4k+h2jtxaw/CpfSUQHVHodX5710TexLad+k1AdrYr0KFT8V5fi5MtP2IsS3tudCWuojbwl4KbaLpgTov7bXQ2qn0rh9rk9ubQjUnjclX1JnQOg1Pxm1n7wutjdGN8/hCdCm0tpviXl9sNtmV51roTxzZat2iMZt2varLG5pbwr68qpK+spg557Isq9M0jftGw77BqShop9vZ3e5ot8Fvqf0mv2xWlLudVZXfkfwCRLcby4BsiHwAAAAASUVORK5CYII=" />
+            </div>
+            <div class="content">
+              <h3 class="title">
+                <%=email%>
+              </h3>
+              <p class="subtitle">
+                <%=item.name%>
+              </p>
+            </div>
+            <div class="content-right">
+              <p class="subtitle">
+                <%=item.mails.sendDateTime.toISOString().split( "T" )[0]%>
+              </p>
+              <p class="subtitle">
+                <%=item.mails.sendDateTime.toISOString().split( "T" )[1].substring(0,5)%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h3 class="subject">Subject : <%=item.mails.subject%>
+            </h3>
+            <br />
+            <p class="description">Description : <%=item.mails.content%>
+            </p>
+          </div>
+        </div>
+      </div>
+      <center>
+        <!-- This div for yet to approve / reject -->
+
+        <% if (item.mails.pendingFlag===true) { %>
+          <div class="actions">
+            <form id="approveRejectForm" action="/validate-request" method="post">
+              <input type="hidden" name="id" value="<%=item.mails._id%>" />
+              <input type="hidden" name="email" value="<%=item.mails.toMail%>" />
+              <input type="hidden" id="keyval" name="key" value="" />
+
+              <input style="height: 60px;width: calc(100%);" name="content" placeholder="Comments" class="form-control"
+                type="text" value="" id="comment"></input>
+              <span class="error" id="commentError"></span>
+              <br />
+              <br />
+              <button type="submit" onclick="change('approve')" class="btn btn-primary btn-lg" id="approve">
+                Approve
+              </button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" onclick="change('reject')" class="btn btn-primary btn-lg" id="reject">
+                Reject
+              </button>
+            </form>
+          </div>
+          <% } %>
+
+            <!-- This div is for already approved / rejected -->
+            <% if (item.mails.approvedFlag===true || item.mails.rejectedFlag===true) { %>
+              <div>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="avatar">
+                      <% if (item.mails.approvedFlag===true) { %>
+                        <img
+                          src="https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/confirm-icon.svg" />
+                        <% } %>
+
+                          <% if (item.mails.rejectedFlag===true) { %>
+                            <img
+                              src="https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/cancel-icon.svg" />
+                            <% } %>
+                    </div>
+                    <div class="bottom-content">
+                      <% if (item.mails.approvedFlag===true) { %>
+                        <h3 class="title">Approved</h3>
+                        <% } %>
+                          <% if (item.mails.rejectedFlag===true) { %>
+                            <h3 class="title">Rejected</h3>
+                            <% } %>
+                              <p class="subtitle">
+                                <%=item.mails.approveOrRejectTime.toISOString().split( "T" )[0]%>
+                              </p>
+                              <p class="subtitle">
+                                <%=item.mails.approveOrRejectTime.toISOString().split( "T" )[1].substring(0,5)%>
+                              </p>
+                    </div>
+                    <p class="description">
+                      <%=item.mails.approverContent%>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+      </center>
+      <% }); %>
+  </section>
+</body>
+<script>
+  function change(value) {
+    event.preventDefault();
+    if (document.getElementById("comment").value.trim() === "") {
+      document.getElementById("commentError").innerText = "Comments can't be empty";
+    } else {
+      document.getElementById("commentError").innerText = "";
+      var defaultEvent = event.target;
+      document.getElementById("keyval").value = value;
+      console.log(document.getElementById("keyval"));
+      let res = document.getElementById("keyval").value;
+      console.log("RESULT", res);
+      var approveRejectform = document.getElementById("approveRejectForm");
+      if (res === "approve" || res === "reject") {
+        approveRejectform.submit()
+      }
+      else {
+        alert('Error');
+      }
+    }
+  }
+
+  //   var approveRejectform = document.getElementById("approveRejectForm");
+  //   approveRejectform.addEventListener('submit', function (event) {
+  //     event.preventDefault()
+  //     document.getElementById("keyval").value= value;
+  //     let res = document.getElementById("keyval").value;
+  //     console.log("RESULT",res);
+  //     if (res === "approve" || res === "reject") {
+  //       approveRejectform.submit()
+  //     }
+  //     else {
+  //      alert('Error');
+  //     }
+  // })
+
+</script>
+<script src="js/NavBar.js" charset="utf-8"></script>
+
+</html>
